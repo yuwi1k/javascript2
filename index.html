@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Выпадающее меню</title>
+    <style>
+        .dropdown {
+            display: none;
+            position: absolute;
+            background-color: white;
+            border: 1px solid #ccc;
+            z-index: 1;
+        }
+        .dropdown > div {
+            padding: 8px;
+            cursor: pointer;
+        }
+        .dropdown > div:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <div id="menu">
+        <button id="level1">Уровень 1</button>
+        <div id="dropdown1" class="dropdown">
+            <div id="level2">Уровень 2</div>
+            <div id="level3">Уровень 3</div>
+        </div>
+    </div>
+
+    <script>
+        const level1Button = document.getElementById('level1');
+        const dropdown1 = document.getElementById('dropdown1');
+
+        level1Button.addEventListener('click', () => {
+            dropdown1.style.display = dropdown1.style.display === 'block' ? 'none' : 'block';
+        });
+    </script>
+</body>
+</html>
